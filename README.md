@@ -65,4 +65,8 @@ make test
 
 ## CI/CD
 
-TO BE COMPLETED 
+Start by creating a CI workflow
+```
+.github/workflows/ci.yml
+```
+
