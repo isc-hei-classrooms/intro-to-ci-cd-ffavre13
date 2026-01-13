@@ -70,3 +70,8 @@ Start by creating a CI workflow
 .github/workflows/ci.yml
 ```
 
+Separate CI and CD by creating a new workflow CD.yml
+```
+.github/workflows/cd.yml
+```
+
