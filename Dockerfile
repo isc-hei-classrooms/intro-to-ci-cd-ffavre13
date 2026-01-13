@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y build-essential g++ make
 WORKDIR /app
 COPY . .
 
+RUN rm -r ./build/
+
 # build + test
 RUN make release
 RUN make test
