@@ -28,4 +28,3 @@ jobs:
       - name: Smoke test
         run: docker run --rm dummydb-ci:latest
       
-      
