@@ -70,8 +70,27 @@ Start by creating a CI workflow
 .github/workflows/ci.yml
 ```
 
+Test the CI workflow
+```
+git commit
+git push
+```
+
+
 Separate CI and CD by creating a new workflow CD.yml
 ```
 .github/workflows/cd.yml
 ```
 
+You need to create a PAT because the repo does not allow write actions, so you cannot use GITHUB_TOKEN. To do this, go to your GitHub account settings, developer settings, Personal access tokens -> Tokens (Classic) -> Generate new token -> Generate new token (classic) -> Select permissions for repo and workflow.
+
+Copy the PAT, then add it to the repository secret by going to the repository settings -> Secrets and variables -> Actions -> New repository secret.
+
+Test the CD workflow
+
+```
+git tag -a v1.0.0 -m "Release version 1.0.0"
+git push origin v1.0.0
+```
+
+On GitHub, go to Release -> Create a new release.
