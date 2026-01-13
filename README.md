@@ -64,6 +64,7 @@ make test
 ```
 
 ## CI/CD
+### CI
 
 Start by creating a CI workflow
 ```
@@ -76,6 +77,7 @@ git commit
 git push
 ```
 
+### CD
 
 Separate CI and CD by creating a new workflow CD.yml
 ```
@@ -94,3 +96,24 @@ git push origin v1.0.0
 ```
 
 On GitHub, go to Release -> Create a new release.
+
+### Docker
+
+Create a docker file
+
+Build the docker image
+
+```
+docker build -t dummydb:latest .
+```
+
+Test the docker image 
+
+```
+docker run --rm dummydb:latest
+
+--rm : delete the docker after execution
+```
+
+Update the CI file
+

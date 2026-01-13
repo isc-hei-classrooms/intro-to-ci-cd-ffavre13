@@ -21,5 +21,11 @@ jobs:
 
       - name: Run tests
         run: make test
+
+      - name: Build docker
+        run: docker build -t dummydb-ci:latest .
+
+      - name: Smoke test
+        run: docker run --rm dummydb-ci:latest
       
       
