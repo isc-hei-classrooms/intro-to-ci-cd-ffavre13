@@ -118,3 +118,10 @@ docker run --rm dummydb:latest
 Update the CI file
 
 Update the CD file
+
+
+pull the docker 
+```
+echo "PAT" | docker login ghcr.io -u ffavre13 --password-stdin
+docker pull ghcr.io/isc-hei-classrooms/intro-to-ci-cd-ffavre13:v1.0.1
+```

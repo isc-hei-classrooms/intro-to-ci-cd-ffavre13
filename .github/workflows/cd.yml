@@ -20,10 +20,10 @@ jobs:
           password: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/ffavre13/intro-to-ci-cd-ffavre13:${{ github.ref_name }} .
+        run: docker build -t ghcr.io/isc-hei-classrooms/intro-to-ci-cd-ffavre13:${{ github.ref_name }} .
 
       - name: Push Docker image
-        run: docker push ghcr.io/ffavre13/intro-to-ci-cd-ffavre13:${{ github.ref_name }}
+        run: docker push ghcr.io/isc-hei-classrooms/intro-to-ci-cd-ffavre13:${{ github.ref_name }}
 
       - name: Build
         run: make release
