@@ -19,11 +19,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
+
+      - name: Lowercase Image Name
+        run: echo "REPO_LOWER=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
+
       - name: Build Docker image
-        run: docker build -t ghcr.io/ffavre13/intro-to-ci-cd-ffavre13:${{ github.ref_name }} .
+        run: docker build -t ghcr.io/${{ env.REPO_LOWER }}/dummydb:${{ github.ref_name }}
 
       - name: Push Docker image
-        run: docker push ghcr.io/ffavre13/intro-to-ci-cd-ffavre13:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ env.REPO_LOWER }}/dummydb:${{ github.ref_name }}
 
       - name: Build
         run: make release
